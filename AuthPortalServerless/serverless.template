@@ -3,7 +3,7 @@
   "Transform": "AWS::Serverless-2016-10-31",
   "Description": "An AWS Serverless Application.",
   "Resources": {
-    "Get": {
+    "DemoFunction": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
         "Handler": "AuthPortalServerless::AuthPortalServerless.Functions::Get",
@@ -16,7 +16,7 @@
           "AWSLambdaBasicExecutionRole"
         ],
         "Events": {
-          "RootGet": {
+          "DemoRoute": {
             "Type": "Api",
             "Properties": {
               "Path": "/",
@@ -25,7 +25,31 @@
           }
         }
       }
+    },
+    "SignUpFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AuthPortalServerless::AuthPortalServerless.Functions::SignUp",
+        "Runtime": "dotnet6",
+        "CodeUri": "",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [
+          "AWSLambdaBasicExecutionRole"
+        ],
+        "Events": {
+          "SignUpRoute": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/signup",
+              "Method": "GET"
+            }
+          }
+        }
+      }
     }
+
   },
   "Outputs": {
     "ApiURL": {

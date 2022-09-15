@@ -15,16 +15,13 @@ public class FunctionTest
     [Fact]
     public void TestGetMethod()
     {
-        TestLambdaContext context;
-        APIGatewayProxyRequest request;
-        APIGatewayProxyResponse response;
 
         Functions functions = new Functions();
 
 
-        request = new APIGatewayProxyRequest();
-        context = new TestLambdaContext();
-        response = functions.Get(request, context);
+        var request = new APIGatewayHttpApiV2ProxyRequest();
+        var context = new TestLambdaContext();
+        var response = functions.Get(request, context);
         Assert.Equal(200, response.StatusCode);
         Assert.Equal("Hello AWS Serverless", response.Body);
     }

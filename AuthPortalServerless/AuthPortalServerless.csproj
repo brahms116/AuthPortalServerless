@@ -15,4 +15,13 @@
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.0" />
     <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.4.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiResult\ApiResultLibrary.csproj" />
+    <ProjectReference Include="..\AuthLibrary\AuthLibrary.csproj" />
+    <ProjectReference Include="..\CacheLibrary\CacheLibrary.csproj" />
+    <ProjectReference Include="..\JwtLibrary\JwtLibrary.csproj" />
+  </ItemGroup>
+
+
 </Project>

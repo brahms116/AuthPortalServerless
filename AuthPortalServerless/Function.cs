@@ -1,6 +1,8 @@
 using System.Net;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
+using CacheLibrary;
+using AuthLibrary;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -9,11 +11,15 @@ namespace AuthPortalServerless;
 
 public class Functions
 {
+
+    private ICache<String> _memoryCacheService = new MemoryCacheService<String>();
+
     /// <summary>
     /// Default constructor that Lambda will invoke.
     /// </summary>
     public Functions()
     {
+        
     }
 
 
@@ -22,11 +28,11 @@ public class Functions
     /// </summary>
     /// <param name="request"></param>
     /// <returns>The API Gateway response.</returns>
-    public APIGatewayProxyResponse Get(APIGatewayProxyRequest request, ILambdaContext context)
+    public APIGatewayHttpApiV2ProxyResponse Get(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("Get Request\n");
 
-        var response = new APIGatewayProxyResponse
+        var response = new APIGatewayHttpApiV2ProxyResponse
         {
             StatusCode = (int)HttpStatusCode.OK,
             Body = "Hello AWS Serverless",
@@ -35,4 +41,13 @@ public class Functions
 
         return response;
     }
+
+    public Task<APIGatewayHttpApiV2ProxyResponse> SignUp(SignupAto input) {
+        return Task.FromResult(new APIGatewayHttpApiV2ProxyResponse {
+            StatusCode = (int)HttpStatusCode.OK,
+            Body="Hello!"
+        });
+    }
+
+
 }
