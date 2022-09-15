@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPortalServerless", "AuthPortalServerless\AuthPortalServerless.csproj", "{C3E25BC9-BD3B-43F7-B380-B0A52345EE13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPortalServerless.Tests", "AuthPortalServerless.Tests\AuthPortalServerless.Tests.csproj", "{334A87F4-30EB-46E2-B986-046BCB8875BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3E25BC9-BD3B-43F7-B380-B0A52345EE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E25BC9-BD3B-43F7-B380-B0A52345EE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E25BC9-BD3B-43F7-B380-B0A52345EE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E25BC9-BD3B-43F7-B380-B0A52345EE13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{334A87F4-30EB-46E2-B986-046BCB8875BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{334A87F4-30EB-46E2-B986-046BCB8875BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{334A87F4-30EB-46E2-B986-046BCB8875BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{334A87F4-30EB-46E2-B986-046BCB8875BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2325447C-CA64-465E-8AE8-920C4E58A826}
+	EndGlobalSection
+EndGlobal
